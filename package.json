@@ -1,0 +1,24 @@
+{
+  "name": "react-dir-scanner",
+  "version": "1.0.0",
+  "description": "A penetration testing tool to find hidden directories and files on websites",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "client": "cd client && npm start",
+    "install-all": "npm install && cd client && npm install",
+    "build": "cd client && npm run build"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "keywords": ["security", "penetration-testing", "directory-scanner", "dirbuster"],
+  "author": "hemanathan115",
+  "license": "MIT"
+}
