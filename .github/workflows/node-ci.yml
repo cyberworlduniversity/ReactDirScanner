@@ -24,6 +24,8 @@ jobs:
       - name: Check server syntax
         if: ${{ hashFiles('server.js') != '' }}
         run: node --check server.js
+      - name: Run tests
+        run: npm test
       - name: Build frontend when configured
         if: ${{ hashFiles('vite.config.js') != '' }}
         run: npm run build
