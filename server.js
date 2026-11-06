@@ -51,8 +51,8 @@ app.post('/api/scan/start', (req, res) => {
     : DEFAULT_WORDLIST;
   if (wordlist.length > 1000 || wordlist.some((item) =>
     typeof item !== 'string' || !item.trim() || item.length > 200 ||
-    item.startsWith('/') || item.includes('\\') || item.split('/').includes('..') ||
-    /[\\u0000-\\u001f]/.test(item)
+    item.startsWith('/') || item.includes(String.fromCharCode(92)) || item.includes('?') || item.includes('#') || item.split('/').includes('..') ||
+    item.split('').some((char) => char.charCodeAt(0) < 32)
   )) {
     return res.status(400).json({ error: 'Wordlist must contain at most 1000 safe relative paths' });
   }
