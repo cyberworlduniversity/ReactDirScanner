@@ -100,7 +100,7 @@ async function runScan(sessionId) {
   }
 
   const agents = createPinnedAgents(target);
-  const baseUrl = target.url.toString().replace(/\\/+$/, '');
+  const baseUrl = target.url.toString().replace(/\/+$/, '');
 
   for (let i = 0; i < session.wordlist.length; i += session.concurrency) {
     if (session.status !== 'running') break;
@@ -126,6 +126,9 @@ async function runScan(sessionId) {
 
 async function checkPath(baseUrl, path, timeout, agents) {
   const url = new URL(path, baseUrl + '/');
+  if (url.origin !== new URL(baseUrl).origin) {
+    return { path, found: false, error: 'Path must remain on the validated target origin' };
+  }
   const startTime = Date.now();
   try {
     const response = await axios.get(url.toString(), {
