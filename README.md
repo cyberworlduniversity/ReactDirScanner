@@ -105,3 +105,49 @@ cd client && npm start
 ---
 
 *ReactDirScanner v1.0 — For authorized penetration testing only*
+
+
+## Repository Quick Start
+
+Clone the canonical repository:
+
+```bash
+git clone https://github.com/cyberworlduniversity/ReactDirScanner.git
+cd ReactDirScanner
+```
+
+### Requirements and installation
+
+- Node.js 18+
+
+```bash
+npm install
+```
+
+### Start the application
+
+```bash
+npm start
+```
+
+The API server starts on the port configured in server.js. App.jsx is supplied as a React component; the repository does not include a client/ scaffold, so create/configure a separate React client before using the dashboard.
+
+### Build / validation
+
+Check that dependencies install cleanly and that the application starts without runtime errors. No automated test script is currently declared in package.json.
+
+Directory discovery must be limited to systems and paths you are authorized to test.
+
+### Application flow
+
+```mermaid
+flowchart TD
+    A[Open application] --> B[Load frontend and server]
+    B --> C[Accept user input]
+    C --> D{Input valid?}
+    D -- No --> E[Show validation message]
+    D -- Yes --> F[Run ReactDirScanner analysis]
+    F --> G[Render results]
+    G --> H[Finish]
+    E --> H
+```
