@@ -1,4 +1,14 @@
 # ⚡ ReactDirScanner
+
+
+## Get this repository
+
+Clone the current project (this repository's canonical GitHub URL), then follow the installation and usage steps below.
+
+```bash
+git clone https://github.com/cyberworlduniversity/ReactDirScanner.git
+cd ReactDirScanner
+```
 ### Hidden Directory & File Finder | Inspired by DirBuster
 
 > ⚠️ **Legal Disclaimer:** Use this tool ONLY on websites you own or have explicit written permission to test. Unauthorized scanning is illegal.
